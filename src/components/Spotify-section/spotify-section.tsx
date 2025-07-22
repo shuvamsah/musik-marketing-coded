@@ -21,28 +21,30 @@ const SpotifySection = () => {
         </div>
         {/* Right: Text content */}
         <div className="flex flex-col justify-center lg:pl-12">
-          <p className="uppercase tracking-widest text-teal-300 font-medium mb-2 text-sm">Kanalübergreifende Werbung für deine Musik</p>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-2">
-            <span className="text-teal-300">Spotify</span>, TikTok, Reels...
-          </h1>
-          <div className="flex items-center gap-2 mb-6">
-            <span className="text-teal-300">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1ED760"/><path d="M17.25 16.25C15.25 15.25 8.75 14.75 6.75 15.75M17.25 13.25C15.25 12.25 8.75 11.75 6.75 12.75M13.25 8.75C12.25 8.25 9.75 8.25 8.75 8.75" stroke="#000" strokeWidth="1.5" strokeLinecap="round"/></svg>
+          <p className="uppercase tracking-widest font-medium mb-2 text-sm" style={{ color: '#8FEFE3' }}>Kanalübergreifende Werbung für deine Musik</p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+            <span style={{ color: '#8FEFE3' }}>Spotify</span>, TikTok, Reels...
+          </h2>
+          <p className="text-base md:text-lg text-white/90 mb-8">
+            <span style={{ color: '#8FEFE3' }}>
+              Echte Musik Promotion bedeutet für uns, deine Songs so zu promoten, dass echte Fans auf dich aufmerksam werden
             </span>
-            <span className="text-teal-300 font-semibold"> </span>
-          </div>
-          <p className="mb-6 text-lg max-w-xl">
-            Mit über 500 erfolgreichen Kampagnen sind wir <span className="font-bold">marktführend</span> in den Bereichen <span className="font-bold">Musikwerbung & Songpromotion</span>. Wir schalten zielgerichtete Werbung für deine Musik auf allen Kanälen und sorgen für mehr Reichweite und echte Streams mit <span className="font-bold">datenbasierter Musikpromotion</span>! Zudem bieten wir <span className="font-bold">professionelle Schulungen</span> an und bringen dir bei, deine eigene Werbung zu schalten – <span className="font-bold">unabhängig von Musikmarketing Agenturen!</span>
+            <span className="font-semibold" style={{ color: '#8FEFE3' }}> </span>
+            und deine Musik dadurch von den Algorithmen der Plattformen bevorzugt ausgespielt wird.
           </p>
-          <ul className="mb-8 space-y-3">
-            <li className="flex items-center gap-3 text-base">
-              <Check className="text-teal-300 w-6 h-6" /> Musikpromotion & Schulungen
+          
+          <ul className="space-y-4 mb-8">
+            <li className="flex items-start gap-3">
+              <Check className="w-6 h-6" style={{ color: '#8FEFE3' }} /> Musikpromotion & Schulungen
             </li>
-            <li className="flex items-center gap-3 text-base">
-              <Check className="text-teal-300 w-6 h-6" /> Mehr Reichweite, mehr Fans, mehr Streams
+            <li className="flex items-start gap-3">
+              <Check className="w-6 h-6" style={{ color: '#8FEFE3' }} /> Organischer Fanaufbau durch Werbung
             </li>
-            <li className="flex items-center gap-3 text-base">
-              <Check className="text-teal-300 w-6 h-6" /> Deutschlands größte Musikmarketing Datenbank
+            <li className="flex items-start gap-3">
+              <Check className="w-6 h-6" style={{ color: '#8FEFE3' }} /> Mehr Reichweite, mehr Fans, mehr Streams
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="w-6 h-6" style={{ color: '#8FEFE3' }} /> Deutschlands größte Musikmarketing Datenbank
             </li>
           </ul>
         </div>

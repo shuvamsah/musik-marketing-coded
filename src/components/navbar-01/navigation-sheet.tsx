@@ -8,11 +8,11 @@ export const NavigationSheet = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button variant="ghost" size="icon">
           <Menu />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="bg-black border-neutral-800 text-white p-6">
         <Image
           src="/images/ATEM logo.svg"
           alt="Logo"

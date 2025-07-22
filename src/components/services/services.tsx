@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Headings } from "@/components/Headings";
-import { Card } from "@/components/ui/card";
+import { Grid3X3 } from "lucide-react";
 import React from "react";
 
 const services = [
@@ -59,29 +59,33 @@ const services = [
 export function ServicesSection() {
   return (
     <section className="bg-black text-white py-16">
-      <Headings>
+      <Headings icon={<Grid3X3 />}>
         {["Von Musik Marketing ", "bis Label Gründung"]}
       </Headings>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-        {services.map((service) => (
-          <Card key={service.title} className="relative overflow-hidden group p-0 h-[340px] rounded-xl">
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="object-cover object-center transition-transform duration-300 group-hover:scale-105 rounded-xl"
-              style={{ zIndex: 1 }}
-            />
-            <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors duration-300 z-10 rounded-xl" />
-            <div className="relative z-20 flex flex-col h-full justify-end p-6">
-              <div className="flex items-center mb-4">
-                <Image src={service.icon} alt="icon" width={48} height={48} className="mr-3" />
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {services.map((service) => (
+            <div 
+              key={service.title} 
+              className="relative overflow-hidden group h-[340px] rounded-xl"
+            >
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors duration-300" />
+              <div className="relative z-20 flex flex-col h-full justify-end p-6">
+                <div className="flex items-center mb-4">
+                  <Image src={service.icon} alt="icon" width={48} height={48} className="mr-3" />
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-white drop-shadow-lg">{service.title}</h3>
+                <p className="text-base text-white/90 drop-shadow-md">{service.desc}</p>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-white drop-shadow-lg">{service.title}</h3>
-              <p className="text-base text-white/90 drop-shadow-md">{service.desc}</p>
             </div>
-          </Card>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

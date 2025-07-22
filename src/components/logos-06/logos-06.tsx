@@ -1,4 +1,5 @@
 import Marquee from "@/components/ui/marquee";
+import Image from "next/image";
 
 const socialLogos = [
   "/images/social logos/Frame 35.png",
@@ -12,21 +13,22 @@ const socialLogos = [
 
 const Logos06Page = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6">
-      <div className="overflow-hidden">
-        <p className="text-center text-xl font-medium">
-          More than 2.2 million companies worldwide already trust us
-        </p>
-
-        <div className="mt-20 flex items-center justify-center gap-x-14 gap-y-10 max-w-screen-lg">
-          <Marquee pauseOnHover className="[--duration:20s] [&_img]:mr-10">
-            {socialLogos.map((src, idx) => (
-              <img key={idx} src={src} alt={`Logo ${idx + 1}`} className="h-12 w-auto object-contain" />
-            ))}
-          </Marquee>
-        </div>
+    <section className="w-full bg-black py-12 flex items-center justify-center">
+      <div className="overflow-hidden w-full max-w-6xl">
+        <Marquee pauseOnHover className="[--duration:20s] [&_img]:mr-16">
+          {socialLogos.map((src, idx) => (
+            <Image
+              key={idx}
+              src={src}
+              alt={`Logo ${idx + 1}`}
+              width={64}
+              height={64}
+              className="h-16 w-auto object-contain brightness-0 invert opacity-90 transition duration-300 hover:opacity-100"
+            />
+          ))}
+        </Marquee>
       </div>
-    </div>
+    </section>
   );
 };
 

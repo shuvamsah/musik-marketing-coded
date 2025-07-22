@@ -1,79 +1,72 @@
-import { cn } from "/lib/utils";
-import { Check } from "lucide-react";
+'use client';
+import Image from "next/image";
 
 const steps = [
   {
-    title: "Research",
+    title: "Musikmarketing anfragen",
     description:
-      "Gather information and analyze requirements to understand the problem and define objectives.",
-    completed: true,
+      "Bewirb dich jetzt für eine Zusammenarbeit – wir prüfen, ob deine Anfrage zu unseren Strategien passt.",
+    icon: "/images/Tree icons/1.png",
   },
   {
-    title: "Planning",
+    title: "Quality Check",
     description:
-      "Create a roadmap, define the scope, and outline the necessary steps to achieve the goal.",
-    completed: true,
+      "Wir analysieren deine Brand, deine Musik & alle deine Kanäle und identifizieren Wachstumspotenziale.",
+    icon: "/images/Tree icons/2.png",
   },
   {
-    title: "Design",
+    title: "Marketingstrategie",
     description:
-      "Develop wireframes, mockups, and prototypes to visualize the structure and user experience.",
-    completed: true,
+      "Gemeinsam entwickeln wir eine maßgeschneiderte Release- & Promotionsstrategie.",
+    icon: "/images/Tree icons/3.png",
   },
   {
-    title: "Development",
+    title: "Musikpromotion",
     description:
-      "Write code, integrate features, and build the core functionality of the application.",
+      "Wir bringen dir bei, Werbung zu schalten oder begleiten dich mit Werbung für deine Musik auf Spotify, YouTube, Instagram, TikTok & Co!",
+    icon: "/images/Tree icons/4.png",
   },
   {
-    title: "Testing",
+    title: "Musik Analytics",
     description:
-      "Perform quality assurance, fix bugs, and optimize performance before release.",
-  },
-  {
-    title: "Deployment",
-    description:
-      "Launch the project in a live environment and ensure smooth deployment.",
-  },
-  {
-    title: "Maintenance",
-    description:
-      "Monitor performance, update features, and provide ongoing support and improvements.",
+      "Wir analysieren & optimieren – basierend auf echten Daten, damit du langfristig wächst. Die größten Talente sichern sich exklusive Deals!",
+    icon: "/images/Tree icons/5.png",
   },
 ];
 
 export default function Timeline() {
   return (
-    <div className="max-w-screen-sm mx-auto py-12 md:py-20 px-6">
-      <div className="relative ml-6">
-        {/* Timeline line */}
-        <div className="absolute left-0 inset-y-0 border-l-2" />
-
-        {steps.map(({ title, description, completed }, index) => (
-          <div key={index} className="relative pl-10 pb-10 last:pb-0">
-            {/* Timeline Icon */}
-            <div
-              className={cn(
-                "absolute left-px -translate-x-1/2 h-9 w-9 border-2 border-muted-foreground flex items-center justify-center rounded-full bg-accent ring-8 ring-background",
-                {
-                  "bg-primary border-primary text-primary-foreground":
-                    completed,
-                }
-              )}
-            >
-              <span className="font-semibold text-lg">
-                {completed ? <Check className="h-5 w-5" /> : index + 1}
-              </span>
+    <div className="relative w-full min-h-[600px]">
+      <div
+        className="absolute bg-gradient-to-b from-[#8FEFE3] to-transparent"
+        style={{
+          left: '40px',
+          top: '40px',
+          width: '4px',
+          height: 'calc(100% - 80px)',
+          zIndex: 0,
+        }}
+      />
+      {steps.map(({ title, description, icon }, index) => (
+        <div
+          key={index}
+          className="flex items-center w-full relative z-10 mb-16 last:mb-0"
+        >
+          <div className="relative flex items-center justify-center w-20 h-20">
+            <div className="flex items-center justify-center w-20 h-20 rounded-full border-4 bg-black shadow-[0_0_16px_4px_#8FEFE3] border-[#8FEFE3]">
+              <Image src={icon} alt="icon" width={48} height={48} />
             </div>
-
-            {/* Content */}
-            <div className="pt-1 space-y-2">
-              <h3 className="text-xl font-semibold">{title}</h3>
-              <p className="text-muted-foreground">{description}</p>
-            </div>
+            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-black text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center border-2 border-black bg-[#8FEFE3]">
+              {index + 1}
+            </span>
           </div>
-        ))}
-      </div>
+
+          <div className="pl-8 text-left">
+            <h3 className="text-xl font-bold mb-2 text-white">{index + 1}. {title}</h3>
+            <p className="text-white/80 text-base max-w-sm">{description}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

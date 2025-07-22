@@ -19,12 +19,15 @@ const artists: Artist[] = [
 
 export function ArtistGallery() {
     return (
-      <section className="w-screen max-w-none overflow-hidden">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-0 w-full">
+      <section className="w-full relative overflow-hidden">
+        {/* Fade overlay across entire section */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/70 z-10" />
+        
+        <div className="grid grid-cols-6 w-full">
           {artists.map((artist) => (
             <div
               key={artist.name}
-              className="relative w-full aspect-[3/4] h-full overflow-hidden"
+              className="relative w-full aspect-[3/4] overflow-hidden"
             >
               <Image
                 src={artist.image}
@@ -32,11 +35,8 @@ export function ArtistGallery() {
                 fill
                 className="object-cover"
               />
-              {/* dark overlay */}
-              <div className="absolute inset-0 bg-black/50" />
-              {/* centered name */}
               <h4
-                className="absolute inset-0 flex items-center justify-center text-2xl md:text-4xl font-bold text-white text-center"
+                className="absolute inset-0 flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white text-center px-2 z-20"
               >
                 {artist.name}
               </h4>
